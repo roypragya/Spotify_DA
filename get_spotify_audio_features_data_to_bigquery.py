@@ -8,7 +8,7 @@ secret = "033870832e60454b8c23e5e7a56b4280"
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret) 
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-# retrive data from spotidy web API
+# retrive data from spotify web API
 artist_name = []
 track_name = []
 popularity = []
@@ -23,7 +23,6 @@ for i in range(0,1000,50):
 
 # creating data set
 df_tracks = pd.DataFrame({'popularity':popularity,'artist_name':artist_name,'track_name':track_name,'track_id':track_id})
-# df_tracks = df_tracks.sort_values('popularity', ascending=False)
 print(df_tracks.shape)
 df_tracks.head()
 
@@ -81,4 +80,4 @@ df.head()
 df[df.duplicated(subset=['artist_name','track_name'],keep=False)]
 
 # csv file
-df.to_csv('SpotifyAudioFeatures08082018.csv')
+df.to_csv('SpotifyAudioFeatures2022.csv')
